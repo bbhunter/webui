@@ -4,7 +4,11 @@
         <div class="item title">DASHBOARD</div>
         <div class="connect">
           <!-- if logged off :  -->
-          <div class="item login">LOGIN</div>
+          <router-link tag="div" to="/login">
+            <div class="item login">
+              LOGIN
+            </div>
+          </router-link>
           <!-- else :  -->
           <!-- <div class="item disconnect">DISCONNECT</div> -->
         </div>
@@ -25,22 +29,29 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .topbar{
-  z-index: 1;
+  z-index: 1000;
   width: 100vw;
   display: flex;
   justify-content: space-between;
   color:#FFF;
   height: 3em;
   text-align: left;
-  background-color: #f50;
+  background-color: #283243;
   flex-flow: row wrap;
+  border-bottom: 1px solid #000;
 }
+
 .item {
   flex: 0 1 0;
   width: 10vw;
   min-width: 150px;
   height: 100%;
-  background-color: #0F0;
+  line-height: 3em;
+  text-align: center;
+}
+
+.login:hover{
+  background-color: #8eacc5;
 }
 
 .logo {
