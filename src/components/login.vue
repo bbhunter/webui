@@ -30,7 +30,7 @@ export default {
   border: 2px solid #323e4f;
   width: 200px;
   text-align: left;
-  padding: 0 10px 0 10px ;
+  padding: 0 10px 0 10px;
 	margin: auto;
 }
 
