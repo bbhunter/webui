@@ -48,7 +48,7 @@ export default {
 }
 
 .setting{
-    margin-top: auto;
+    margin-top: auto; /* put it at the bottom */
 }
 
 .spacer{

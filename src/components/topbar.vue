@@ -1,7 +1,7 @@
 <template>
     <div class="topbar">
         <div class="item logo">LOGO HERE</div>
-        <div class="item title">DASHBOARD</div>
+        <div class="item title">{{ name }}</div>
         <div class="connect">
           <!-- if logged off :  -->
           <router-link tag="div" to="/login">
@@ -20,7 +20,7 @@ export default {
   name: 'topbar',
   data() {
     return {
-      name: 'Netm4ul',
+      name: 'DASHBOARD',
     };
   },
 };
@@ -29,7 +29,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .topbar{
-  z-index: 1000;
   width: 100vw;
   display: flex;
   justify-content: space-between;
