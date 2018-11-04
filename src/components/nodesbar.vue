@@ -14,6 +14,9 @@ export default {
     name: 'nodesbar',
     created(){
         this.fetchNodes()
+        setInterval(function(){
+            this.fetchNodes()
+        }.bind(this), 5000)
     },
 	data() {
 		return {
