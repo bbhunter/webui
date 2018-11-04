@@ -30,4 +30,14 @@ export default {
   min-width: 100vw;
   min-height: 100vh;
 }
+
+#container{
+  margin-left: 5em;
+  margin-right: 5em;
+  padding-top: 3em;
+  padding-left: 5em;
+  top:0;
+  left:0;
+  right: 0;
+}
 </style>

@@ -8,7 +8,7 @@
 
 export default {
     
-  name: 'ips',
+  name: 'ports',
   data() {
     return {
     };
