@@ -3,36 +3,35 @@
         <div class="node-title"><span class="node-id">{{ id }}</span></div>
         <div class="spacer"></div>
         <div class="node-main">
-			<div class="node-info">
-				Modules : 
+			<div class="node-line">
+				IP : {{ ip }}
+			</div>
+			<div class="node-line" v-bind:class="{'success': isAvailable}">
+				Available : {{ isAvailable }}
+			</div>
+			<div class="node-line">
+				Project : {{ project }}
+			</div>
+            <div class="node-line">
+                Modules : 
                 <div class="module-list">
                     <div class="node-module" v-for="m in modules" :key="m" :style="{ backgroundColor: getModuleColor(m) }">
                         {{ m }}
                     </div>
                 </div>
-			</div>
-			<div class="node-version">
-				IP : {{ ip }}
-			</div>
-			<div class="node-version">
-				Project : {{ project }}
-			</div>
-			<div class="node-version" v-bind:class="{'success': isAvailable}">
-				Available : {{ isAvailable }}
-			</div>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
 import axios from "axios"
-import store from "../main.js"
+import store from "@/store.js"
 import ColorHash from "color-hash"
 
 export default {
 	name: 'node',
 	created(){
-        console.log(store)
         var n = store.getNodes(this.id)
         if(typeof n === "undefined"){
             console.log("Could not get node :", this.id)
@@ -73,11 +72,17 @@ export default {
 .node-block{
     color:#fff;
     background-color: #232d3d;
-    width: 12em;
+    min-width: 12em;
+    max-width: 25%;
     min-height: 7em;
     border: 1px solid #1c2532;
-    padding: 0 5px 0 5px;
+    margin: 1em 0 1em 0;
+    padding: 0 2% 0 2%;
     text-align: left;
+    flex-grow: 1;
+}
+.node-line{
+    line-height: 1.3em;
 }
 .node-module{
     background-color: #323e4f;
@@ -86,10 +91,11 @@ export default {
     line-height: 1.6em;
     text-align: center;
     border: 1px solid #1c2532;
-    align-self: stretch;
+    flex-grow: 1;
+    flex-wrap: wrap;
 }
 .node-main {
-    margin: 1em 0em 1em 1em;
+    margin: 2% 0 2% 2%;
 }
 .node-title {
     overflow: hidden;

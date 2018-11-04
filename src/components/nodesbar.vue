@@ -7,14 +7,14 @@
 <script>
 
 import node from "./node";
-import store from "../main.js";
+import store from "@/store.js"
 import axios from "axios";
 
 export default {
     name: 'nodesbar',
     created(){
         this.fetchNodes()
-        setInterval(function(){
+        var ticker = setInterval(function(){
             this.fetchNodes()
         }.bind(this), 5000)
     },
@@ -37,9 +37,8 @@ export default {
             .then(response => {
                 this.nodes = response.data.data;
                 store.setNodes(this.nodes)
-                console.log(this.nodes)
             })
-        } 
+        },
     },
 	components: { node }
 };

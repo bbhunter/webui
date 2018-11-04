@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import login from '@/components/login';
 import index from '@/components/index';
+import ips from '@/components/ips';
 
 Vue.use(Router);
 
@@ -20,6 +21,14 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: login,
+    },
+    {
+      path: '/ips',
+      name: 'ips',
+      component: ips,
+      meta: {
+        title: "Netm4ul - IP List",
+      },
     },
   ],
 });

@@ -1,13 +1,21 @@
 <template>
   <div id="app">
-    
-    <router-view/>
+    <div id="root">
+      <topbar></topbar>
+      <sidebar></sidebar>
+      <router-view/>
+    </div>
   </div>
 </template>
 
 <script>
+
+import topbar from '@/components/topbar';
+import sidebar from '@/components/sidebar';
+
 export default {
   name: 'App',
+  components: { topbar, sidebar }
 };
 </script>
 

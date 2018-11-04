@@ -1,24 +1,21 @@
 <template>
+<div id="root">
     <div id="container">
-      <statusbar></statusbar>
-      <dm-divider size="large"></dm-divider>
-      <nodesbar></nodesbar>
+
     </div>
+</div>
 </template>
 
 <script>
-import statusbar from './statusbar';
-import nodesbar from './nodesbar';
 
 export default {
     
-  name: 'index',
+  name: 'ips',
   data() {
     return {
-      name: 'Netm4ul',
     };
   },
-  components: { statusbar, nodesbar }
+  components: {}
 };
 </script>
 

@@ -1,17 +1,17 @@
 <template>
     <div class="sidebar">
         <div class="spacer"></div>
-        <div class="item"><div>IP</div></div>
+        <router-link to="/ips" class="item"><div>IP</div></router-link>
         <div class="spacer"></div>
-        <div class="item"><div>.TLD</div></div>
+        <router-link to="/domains" class="item"><div>.TLD</div></router-link>
         <div class="spacer"></div>
-        <div class="item"><div>Port</div></div>
+        <router-link to="/ports" class="item"><div>Port</div></router-link>
         <div class="spacer"></div>
-        <div class="item"><div>URI</div></div>
+        <router-link to="/uris" class="item"><div>URI</div></router-link>
         <div class="spacer"></div>
         <div class="item empty"></div>
         <div class="spacer"></div>
-        <div class="item setting"><div>config</div></div>
+        <router-link to="/config" class="item"><div>Config</div></router-link>
     </div>
 </template>
 
@@ -45,6 +45,8 @@ export default {
     height: 2em;
     flex-grow: 0;
     width:100%;
+    color: #FFF;
+    text-decoration: none;
 }
 .empty{
     flex-grow: 1;
@@ -56,7 +58,6 @@ export default {
     height: 100%;
     cursor: pointer;
 }
-
 .spacer{
     border-bottom: 1px solid #000;
 }
