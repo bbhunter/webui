@@ -8,7 +8,7 @@
 
 export default {
     
-  name: 'ips',
+  name: 'domains',
   data() {
     return {
     };

@@ -8,7 +8,7 @@
 
 export default {
     
-  name: 'ips',
+  name: 'uris',
   data() {
     return {
     };
