@@ -60,7 +60,7 @@ export default {
     },
     methods: {
         getModuleColor(name){
-            var colorHash = new ColorHash();
+            var colorHash = new ColorHash({hue: 200, saturation:0.8, lightness: 0.25});
             return colorHash.hex(name)
         }
     }
@@ -82,8 +82,8 @@ export default {
 .node-module{
     background-color: #323e4f;
     margin: 0.2em;
-    padding: 0.2em;
-    line-height: 1.5em;
+    padding: 0.2em 0.3em 0.2em 0.3em;
+    line-height: 1.6em;
     text-align: center;
     border: 1px solid #1c2532;
     align-self: stretch;
