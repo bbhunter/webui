@@ -6,7 +6,7 @@
 			<div class="node-info">
 				Modules : 
                 <div class="module-list">
-                    <div class="node-module" v-for="m in modules" :key="m">
+                    <div class="node-module" v-for="m in modules" :key="m" :style="{ backgroundColor: getModuleColor(m) }">
                         {{ m }}
                     </div>
                 </div>
@@ -27,6 +27,7 @@
 <script>
 import axios from "axios"
 import store from "../main.js"
+import ColorHash from "color-hash"
 
 export default {
 	name: 'node',
@@ -34,6 +35,7 @@ export default {
         console.log(store)
         var n = store.getNodes(this.id)
         if(typeof n === "undefined"){
+            console.log("Could not get node :", this.id)
             return
         }
         this.ip = n.ip
@@ -56,6 +58,12 @@ export default {
             required: true,
         },
     },
+    methods: {
+        getModuleColor(name){
+            var colorHash = new ColorHash();
+            return colorHash.hex(name)
+        }
+    }
 };
 </script>
 
