@@ -52,7 +52,6 @@ export default {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding: 1em 0 1em 0;
   justify-content: space-around;
 }
 </style>
