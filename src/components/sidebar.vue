@@ -1,15 +1,17 @@
 <template>
     <div class="sidebar">
         <div class="spacer"></div>
-        <div class="item">IP</div>
+        <div class="item"><div>IP</div></div>
         <div class="spacer"></div>
-        <div class="item">.TLD</div>
+        <div class="item"><div>.TLD</div></div>
         <div class="spacer"></div>
-        <div class="item">Port</div>
+        <div class="item"><div>Port</div></div>
         <div class="spacer"></div>
-        <div class="item">URI</div>
+        <div class="item"><div>URI</div></div>
         <div class="spacer"></div>
-        <div class="item setting">config</div>
+        <div class="item empty"></div>
+        <div class="spacer"></div>
+        <div class="item setting"><div>config</div></div>
     </div>
 </template>
 
@@ -41,14 +43,18 @@ export default {
     line-height: 2em;
     text-transform: uppercase;
     height: 2em;
+    flex-grow: 0;
+    width:100%;
 }
-
-.item:hover{
+.empty{
+    flex-grow: 1;
+}
+.item>div:hover{
     background-color: #8eacc5;
-}
-
-.setting{
-    margin-top: auto; /* put it at the bottom */
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
 }
 
 .spacer{
