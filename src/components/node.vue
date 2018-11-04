@@ -4,13 +4,21 @@
         <div class="spacer"></div>
         <div class="node-main">
 			<div class="node-info">
-				Modules : {{ modules }}
+				Modules : 
+                <div class="module-list">
+                    <div class="node-module" v-for="m in modules" :key="m">
+                        {{ m }}
+                    </div>
+                </div>
 			</div>
 			<div class="node-version">
 				IP : {{ ip }}
 			</div>
 			<div class="node-version">
 				Project : {{ project }}
+			</div>
+			<div class="node-version" v-bind:class="{'success': isAvailable}">
+				Available : {{ isAvailable }}
 			</div>
         </div>
     </div>
@@ -58,25 +66,42 @@ export default {
     color:#fff;
     background-color: #232d3d;
     width: 12em;
-    height: 7em;
+    min-height: 7em;
     border: 1px solid #1c2532;
     padding: 0 5px 0 5px;
+    text-align: left;
+}
+.node-module{
+    background-color: #323e4f;
+    margin: 0.2em;
+    padding: 0.2em;
+    line-height: 1.5em;
+    text-align: center;
+    border: 1px solid #1c2532;
+    align-self: stretch;
+}
+.node-main {
+    margin: 1em 0em 1em 1em;
 }
 .node-title {
-    width: 100%;
     overflow: hidden;
     line-height: 1.5em;
     font-size: 1.5em;
     text-align: center;
     text-overflow: ellipsis;
 }
+.module-list{
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+}
 .node-id{
     font-size: 0.6em;
 }
-.green{
+.success{
 	color: #1bb934;
 }
-.red{
+.error{
 	color: #e1112c;
 }
 .warning{
