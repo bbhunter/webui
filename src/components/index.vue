@@ -1,7 +1,7 @@
 <template>
     <div id="container">
       <statusbar></statusbar>
-      <dm-divider size="large"></dm-divider>
+      <dm-divider color="black" size="large"></dm-divider>
       <nodesbar></nodesbar>
     </div>
 </template>
