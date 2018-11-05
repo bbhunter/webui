@@ -39,7 +39,7 @@ export default new Router({
       name: 'domains',
       component: domains,
       meta: {
-        title: "Netm4ul - IP List",
+        title: "Netm4ul - Domain List",
       },
     },
     {
@@ -47,7 +47,7 @@ export default new Router({
       name: 'ports',
       component: ports,
       meta: {
-        title: "Netm4ul - IP List",
+        title: "Netm4ul - Port List",
       },
     },
     {
@@ -55,7 +55,7 @@ export default new Router({
       name: 'uris',
       component: uris,
       meta: {
-        title: "Netm4ul - IP List",
+        title: "Netm4ul - URI List",
       },
     },
   ],
