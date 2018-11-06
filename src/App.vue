@@ -3,7 +3,9 @@
     <div id="root">
       <topbar></topbar>
       <sidebar></sidebar>
-      <router-view/>
+      <keep-alive>
+        <router-view/>
+      </keep-alive>
     </div>
   </div>
 </template>
