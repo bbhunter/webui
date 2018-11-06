@@ -60,6 +60,7 @@ export default {
 		fetchIPs(){
 			this.$http
 			.get(
+				//TOFIX
 				this.$APIUrl + "projects/" + "first"+ '/ips',
 			)
 			.then(response => {
