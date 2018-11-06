@@ -8,7 +8,6 @@
 
 import node from "./node";
 import store from "@/store.js"
-import axios from "axios";
 
 export default {
     name: 'nodesbar',
@@ -25,14 +24,9 @@ export default {
     },
     methods:{
         fetchNodes(){
-            axios
+            this.$http
             .get(
-                'http://127.0.0.1:8000/api/v1/nodes',
-                {
-                    headers: {
-                        "X-Session-Token":"testtoken",
-                    }
-                }
+                this.$APIUrl + 'nodes',
             )
             .then(response => {
                 this.nodes = response.data.data;
