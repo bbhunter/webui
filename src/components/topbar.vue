@@ -1,18 +1,16 @@
 <template>
-    <div class="topbar">
-        <div class="item logo">LOGO HERE</div>
-        <div class="item title">{{ name }}</div>
-        <div class="connect">
-          <!-- if logged off :  -->
-          <router-link tag="div" to="/login">
-            <div class="item login">
-              LOGIN
-            </div>
-          </router-link>
-          <!-- else :  -->
-          <!-- <div class="item disconnect">DISCONNECT</div> -->
-        </div>
-    </div>
+  <div class="topbar">
+    <div class="item logo">LOGO HERE</div>
+    <router-link to="/" class="item title"><div>{{ name }}</div></router-link>
+    <!-- if logged off :  -->
+    <router-link tag="div" to="/login">
+      <div class="item login">
+        LOGIN
+      </div>
+    </router-link>
+    <!-- else :  -->
+    <!-- <div class="item disconnect">DISCONNECT</div> -->
+  </div>
 </template>
 
 <script>
@@ -59,6 +57,13 @@ export default {
 
 .title {
   text-align: center;
+  text-decoration: none;
+}
+.title:hover{
+  background-color: #8eacc5;
+}
+.title>div{
+  color:#fff;
 }
 
 
