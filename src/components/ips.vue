@@ -22,15 +22,18 @@
 			<th>Updated at</th>
 			<th>Actions</th>
 		</tr>
-		<tr v-for="ip in ips" :key="ip.value">
-			<td>{{ip.value}}</td>
-			<td>{{ip.network}}</td>
-			<td>{{new Date(ip.created_at).toLocaleString()}}</td>
-			<td>{{new Date(ip.updated_at).toLocaleString()}}</td>
+		<tr v-for="ip in state.ips" :key="ip.value">
+			<td>{{ ip.value }}</td>
+			<td>{{ ip.network }}</td>
+			<td>{{ new Date(ip.created_at).toLocaleString() }}</td>
+			<td>{{ new Date(ip.updated_at).toLocaleString() }}</td>
 			<td>
 				<div class="actions">
 					<div class="action action-red" onclick="">
 						<dm-icon class="action-icon" name="close"></dm-icon>
+					</div>
+					<div class="action action-yellow" onclick="">
+						<dm-icon class="action-icon" name="edit"></dm-icon>
 					</div>
 					<div class="action action-green" onclick="">
 						<dm-icon class="action-icon" name="done"></dm-icon>
@@ -43,31 +46,20 @@
 </template>
 
 <script>
+
+import store from "@/store.js"
+
 export default {
 	name: 'ips',
 	created(){
-		this.fetchIPs()
-		var ticker = setInterval(function(){
-			this.fetchIPs()
-		}.bind(this), 5000)
 	},
 	data() {
 		return {
-			ips:{}
-		};
+			state: store.state
+		}
 	},
 	methods:{
-		fetchIPs(){
-			this.$http
-			.get(
-				//TOFIX
-				this.$APIUrl + "projects/" + "first"+ '/ips',
-			)
-			.then(response => {
-				console.log(response)
-				this.ips = response.data.data;
-			})
-		},
+
 	},
 	components: {}
 };
@@ -96,7 +88,8 @@ th{
 .action-red{
 	background-color:#e1112c;
 }
-.action-icon{
+.action-yellow{
+	background-color:#ffc02a;
 }
 .action{
 	padding: 0.2em;

@@ -8,6 +8,7 @@
 
 <script>
 import status from './status';
+import store from "@/store.js"
 
 export default {
 	name: 'statusbar',

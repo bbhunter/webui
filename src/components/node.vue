@@ -44,11 +44,7 @@ export default {
 	},
     data(){
 		return {
-            ip:"",
-            modules:[],
-            isAvailable:false,
-            project:"",
-            store:{},
+            state : store.state
         }
     },
     props: {

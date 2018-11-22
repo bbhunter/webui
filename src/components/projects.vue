@@ -21,7 +21,7 @@
 			<th>Updated at</th>
 			<th>Actions</th>
 		</tr>
-		<tr v-for="project in projects" :key="project.name">
+		<tr v-for="project in state.projects" :key="project.name">
 			<td>{{project.name}}</td>
 			<td>{{new Date(project.created_at).toLocaleString()}}</td>
 			<td>{{new Date(project.updated_at).toLocaleString()}}</td>
@@ -48,6 +48,7 @@ export default {
 	},
 	data() {
 		return {
+			state : store.state
 		};
 	},
 	methods:{

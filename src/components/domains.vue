@@ -41,31 +41,19 @@
 </template>
 
 <script>
+import store from "@/store.js"
+
 export default {
 	name: 'domains',
 	created(){
-		this.fetchdomains()
-		var ticker = setInterval(function(){
-			this.fetchdomains()
-		}.bind(this), 5000)
 	},
 	data() {
 		return {
-			domains:{}
+			state:store.state
 		};
 	},
 	methods:{
-		fetchdomains(){
-			this.$http
-			.get(
-				//TOFIX
-				this.$APIUrl + "projects/" + "first"+ '/domains',
-			)
-			.then(response => {
-				console.log(response)
-				this.domains = response.data.data;
-			})
-		},
+
 	},
 	components: {}
 };

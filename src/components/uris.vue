@@ -5,12 +5,16 @@
 </template>
 
 <script>
+import store from "@/store.js"
 
 export default {
     
   name: 'uris',
+  created(){
+  },
   data() {
     return {
+      state: store.state
     };
   },
   components: {}

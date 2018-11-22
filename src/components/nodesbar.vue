@@ -1,6 +1,6 @@
 <template>
     <div class="nodes-container">
-        <node v-for="node in this.nodes" :key="node.id" :id="node.id"></node>
+        <node v-for="node in state.nodes" :key="node.id" :id="node.id"></node>
     </div>
 </template>
 
@@ -12,27 +12,14 @@ import store from "@/store.js"
 export default {
     name: 'nodesbar',
     created(){
-        this.fetchNodes()
-        var ticker = setInterval(function(){
-            this.fetchNodes()
-        }.bind(this), 5000)
+
     },
 	data() {
 		return {
-			nodes: [],
+			state: store.state,
 		};
     },
     methods:{
-        fetchNodes(){
-            this.$http
-            .get(
-                this.$APIUrl + 'nodes',
-            )
-            .then(response => {
-                this.nodes = response.data.data;
-                store.setNodes(this.nodes)
-            })
-        },
     },
 	components: { node }
 };

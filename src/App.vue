@@ -12,12 +12,15 @@
 
 <script>
 
+
+import store from "@/store.js"
 import topbar from '@/components/topbar';
 import sidebar from '@/components/sidebar';
 
+
 export default {
   name: 'App',
-  components: { topbar, sidebar }
+  components: { topbar, sidebar, store }
 };
 </script>
 
