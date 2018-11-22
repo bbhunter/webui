@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import login from '@/components/login';
 import index from '@/components/index';
 
+import projects from '@/components/projects';
 import ips from '@/components/ips';
 import domains from '@/components/domains';
 import ports from '@/components/ports';
@@ -25,6 +26,14 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: login,
+    },
+    {
+      path: '/projects',
+      name: 'projects',
+      component: projects,
+      meta: {
+        title: "Netm4ul - Project List",
+      },
     },
     {
       path: '/ips',
