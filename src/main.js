@@ -6,7 +6,7 @@ import 'normalize.css';
 import Vue from 'vue';
 import App from './App';
 import router from './router';
-import axios from "axios";
+import store from '@/store';
 
 Vue.use(VueDarkMode);
 Vue.config.productionTip = false;
@@ -31,4 +31,5 @@ new Vue({
 
 setInterval(function(){
   console.log("Refreshing informations")
+  store.updateAll()
 }, config.refreshRate)
